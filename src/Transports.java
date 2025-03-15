@@ -6,9 +6,21 @@ import java.util.Scanner;
 public class Transports {
   public static void main(String[] args) {
     ArrayList<Vehicle> transports = new ArrayList();
-    transports.add(new Plane());
-    transports.add(new Car());
-    transports.add(new Ship());
+    Plane plane = new Plane();
+    plane.setVehicleId(117);
+    transports.add(plane);
+    Car car = new Car();
+    car.setVehicleId(11);
+    transports.add(car);
+    Ship ship = new Ship();
+    ship.setVehicleId(7);
+    transports.add(ship);
+
+    System.out.println(transports);
+
+    Collections.sort(transports);
+
+    System.out.println(transports);
 
     /*
     Sorterer listen jf. compareTo() , som er implementeret i Vehicle vha. Comparable-interfacet.

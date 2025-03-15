@@ -4,16 +4,20 @@ public abstract class Vehicle implements Comparable<Vehicle> {
   private int vehicleId;
   private boolean engineIsStarted;
 
+  public void setVehicleId(int vehicleId) {
+    this.vehicleId = vehicleId;
+  }
+
   public void startEngine() {
     engineIsStarted = true;
   }
 
   @Override
   public int compareTo(Vehicle o) {
-    if (this.vehicleId < o.vehicleId)
-      return -1;
-    else if (this.vehicleId > o.vehicleId)
+    if (this.vehicleId > o.vehicleId)
       return 1;
+    else if (this.vehicleId < o.vehicleId)
+      return -1;
     else
       return 0;
 
@@ -25,5 +29,10 @@ public abstract class Vehicle implements Comparable<Vehicle> {
     Tal større end 0: Dette objekt skal efter det andet.
     Tallet 0: De to objekter er "lige" med hinanden.
      */
+  }
+
+  @Override
+  public String toString() {
+    return "" + vehicleId;
   }
 }
